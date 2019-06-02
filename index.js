@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 const SECRET = process.env.SECRET || "fuckyou";
-const SECRET = process.env.AUTH_PASSWORD || "fuckyou";
+const AUTH_PASSWORD = process.env.AUTH_PASSWORD || "fuckyou";
 const authCookie = "galimbaToken";
 const uuidv4 = require('uuid/v4');
 
