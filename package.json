@@ -1,0 +1,25 @@
+{
+  "name": "galimberti",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lhg31/galimberti.git"
+  },
+  "author": "lhg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lhg31/galimberti/issues"
+  },
+  "homepage": "https://github.com/lhg31/galimberti#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
+}
