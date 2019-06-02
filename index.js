@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 const SECRET = process.env.SECRET || "fuckyou";
+const SECRET = process.env.AUTH_PASSWORD || "fuckyou";
 const authCookie = "galimbaToken";
 const uuidv4 = require('uuid/v4');
 
@@ -32,14 +33,13 @@ app.get('/', checkAuthentication, (req, res, next) => res.render('index'));
 
 app.post('/login', (req, res, next) => {
     //todo, se já logado, redirecionar index
-    if (req.body.pwd === '123') {
-        //auth ok
-        const uuid = uuidv4();
+    if (req.body.pwd === AUTH_PASSWORD) {
+        let uuid = uuidv4();
         var token = jwt.sign({ uuid }, SECRET, {
-            expiresIn: 300 // expires in 5min
+            expiresIn: 300
         });
         res.cookie( authCookie, token );
-        res.status(200).send('Logou!');
+        res.status(200).end();
     }
 
     else{
